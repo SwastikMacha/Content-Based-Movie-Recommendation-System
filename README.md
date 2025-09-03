@@ -16,15 +16,15 @@ The app suggests similar movies based on the metadata (genres, keywords, cast, c
 ---
 
 ## 📂 Project Structure
-├── content_based_movie_recommendation_system.py &emsp; # Preprocessing + model building<br>
-├── app.py # Streamlit web application<br>
-├── dataset/ # Dataset folder<br>
-│ ├── movies/ # Contains tmdb_5000_movies.csv<br>
-│ └── credits/ # Contains tmdb_5000_credits.csv<br>
-├── movie_list.pkl # Pickled movie dataset (metadata + tags)<br>
-├── similarity.pkl # Pickled cosine similarity matrix<br>
-├── requirements.txt # Dependencies<br>
-└── README.md # Project documentation<br>
+├── content_based_movie_recommendation_system.py &emsp;&emsp; # Preprocessing + model building<br>
+├── app.py &emsp;&emsp; # Streamlit web application<br>
+├── dataset/ &emsp;&emsp; # Dataset folder<br>
+│ ├── movies/ &emsp;&emsp; # Contains tmdb_5000_movies.csv<br>
+│ └── credits/ &emsp;&emsp; # Contains tmdb_5000_credits.csv<br>
+├── movie_list.pkl &emsp;&emsp; # Pickled movie dataset (metadata + tags)<br>
+├── similarity.pkl &emsp;&emsp; # Pickled cosine similarity matrix<br>
+├── requirements.txt &emsp;&emsp; # Dependencies<br>
+└── README.md &emsp;&emsp; # Project documentation<br>
 
 
 
