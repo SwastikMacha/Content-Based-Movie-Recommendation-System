@@ -13,7 +13,7 @@ The app suggests similar movies based on the metadata (genres, keywords, cast, c
 
 📂 Project Structure
 
-├── content_based_movie_recommendation_system.py   # Preprocessing + model building
+├── content_based_movie_recommendation_system.py   # Preprocessing + model building \n
 ├── app.py                                         # Streamlit web application
 ├── dataset/                                       # Dataset folder
     ├── movies/                                    # Contains tmdb_5000_movies.csv
