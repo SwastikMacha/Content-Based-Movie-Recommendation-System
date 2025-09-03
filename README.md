@@ -5,22 +5,22 @@ The app suggests similar movies based on the metadata (genres, keywords, cast, c
 
 🚀 Features
 
-✅ Content-Based Recommendation using CountVectorizer + Cosine Similarity.
-✅ Interactive UI built with Streamlit.
-✅ Movie posters, ratings, release date, and overview via TMDB API.
-✅ Option to explore Trending Movies (live from TMDB).
+✅ Content-Based Recommendation using CountVectorizer + Cosine Similarity.<br>
+✅ Interactive UI built with Streamlit.<br>
+✅ Movie posters, ratings, release date, and overview via TMDB API.<br>
+✅ Option to explore Trending Movies (live from TMDB).<br>
 ✅ Pickle-based persistence for faster app loading (movie_list.pkl & similarity.pkl).
 
 📂 Project Structure
 
-├── content_based_movie_recommendation_system.py   # Preprocessing + model building /n
-├── app.py                                         # Streamlit web application
-├── dataset/                                       # Dataset folder
-    ├── movies/                                    # Contains tmdb_5000_movies.csv
-    └── credits/                                   # Contains tmdb_5000_credits.csv
-├── movie_list.pkl                                 # Pickled movie dataset (metadata + tags)
-├── similarity.pkl                                 # Pickled cosine similarity matrix
-├── requirements.txt                               # Dependencies
+├── content_based_movie_recommendation_system.py   # Preprocessing + model building<br>
+├── app.py                                         # Streamlit web application<br>
+├── dataset/                                       # Dataset folder<br>
+    ├── movies/                                    # Contains tmdb_5000_movies.csv<br>
+    └── credits/                                   # Contains tmdb_5000_credits.csv<br>
+├── movie_list.pkl                                 # Pickled movie dataset (metadata + tags)<br>
+├── similarity.pkl                                 # Pickled cosine similarity matrix<br>
+├── requirements.txt                               # Dependencies<br>
 └── README.md                                      # Project documentation
 
 
