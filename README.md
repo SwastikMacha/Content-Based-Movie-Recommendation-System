@@ -25,7 +25,14 @@ The app suggests similar movies based on the metadata (genres, keywords, cast, c
 - `movie_list.pkl` → Pickled movie dataset (metadata + tags)  
 - `similarity.pkl` → Pickled cosine similarity matrix  
 - `requirements.txt` → Dependencies  
-- `README.md` → Project documentation  
+- `README.md` → Project documentation
+
+---
+
+## 📂 Dataset
+
+The project uses the **[TMDB 5000 Movies Dataset](https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata)** containing detailed information about movies including genres, keywords, cast, and crew.  
+
 
 
 
