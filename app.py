@@ -74,7 +74,7 @@ def load_data():
 
     # Download similarity.pkl if not present
     if not os.path.exists("similarity.pkl"):
-        gdown.download("https://drive.google.com/drive/folders/1RVnPqnGYHdnfEGqiqA1A64Wskdhc-sP1?usp=drive_link", "similarity.pkl", quiet=False)
+        gdown.download("https://drive.google.com/file/d/1cZl6Jvu4ODKNxOiRhB2o5hqEluJVjrs5/view?usp=sharing", "similarity.pkl", quiet=False)
 
     similarity = pickle.load(open('similarity.pkl', 'rb'))
     return movies, similarity
