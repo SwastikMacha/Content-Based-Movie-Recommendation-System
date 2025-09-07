@@ -2,6 +2,8 @@ import pickle
 import streamlit as st
 import pandas as pd
 import requests
+import os
+import gdown
 
 # ========================
 # TMDB API Config
@@ -13,6 +15,7 @@ IMG_BASE_URL = "https://image.tmdb.org/t/p/w500/"
 # ========================
 # Utility Functions
 # ========================
+
 @st.cache_data
 def fetch_movie_details(movie_id):
     """Fetch movie details including poster, overview, and rating."""
@@ -25,7 +28,7 @@ def fetch_movie_details(movie_id):
     release_date = response.get('release_date', 'Unknown')
     return full_poster, overview, rating, release_date
 
-def recommend(movie):
+def recommend(movie, movies, similarity):
     """Recommend top 5 similar movies based on similarity matrix."""
     movie_index = movies[movies['title'] == movie].index[0]
     distances = similarity[movie_index]
@@ -62,18 +65,29 @@ def fetch_trending_movies():
         })
     return trending
 
+@st.cache_data
+def load_data():
+    """Load movies and similarity matrix."""
+    # Load movie list
+    movies_dict = pickle.load(open('movie_list.pkl', 'rb'))
+    movies = pd.DataFrame(movies_dict)
+
+    # Download similarity.pkl if not present
+    if not os.path.exists("similarity.pkl"):
+        gdown.download("https://drive.google.com/uc?id=1cZl6Jvu4ODKNxOiRhB2o5hqEluJVjrs5", "similarity.pkl", quiet=False)
+
+    similarity = pickle.load(open('similarity.pkl', 'rb'))
+    return movies, similarity
+
 # ========================
 # Load Data
 # ========================
-movies_dict = pickle.load(open('movie_list.pkl','rb'))
-movies = pd.DataFrame(movies_dict)
-similarity = pickle.load(open('similarity.pkl','rb'))
+movies, similarity = load_data()
 
 # ========================
 # Streamlit UI
 # ========================
 st.set_page_config(page_title="Movie Recommender", page_icon="🎬", layout="wide")
-
 st.title("🎥 Movie Recommender System")
 st.markdown("Get personalized recommendations, trending movies, and more!")
 
@@ -84,7 +98,7 @@ if option == "Recommend Similar Movies":
     selected_movie_name = st.selectbox("Choose a movie:", movies['title'].values)
 
     if st.button("Show Recommendations"):
-        recommendations = recommend(selected_movie_name)
+        recommendations = recommend(selected_movie_name, movies, similarity)
         cols = st.columns(5)
         for idx, col in enumerate(cols):
             with col:
